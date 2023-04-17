@@ -1,0 +1,19 @@
+# Turn Rewrite Engine On
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+RewriteRule ^apps(/*)$ index.php?request=app
+
+# changing the api path to api_todo
+
+RewriteRule ^api_todo(/*)$ api/root.todo.api/api.root.todo.php?resource=todo_api&type=todo
+
+#-----------------------------------------------#
+# Set Gateway API CTRL
+#-----------------------------------------------#
+RewriteRule ^ctrlUp(/*)$ api/controller_ajax.php
+  
+
